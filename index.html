@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📊 Amazon Sales Dashboard</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #0ff;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #1f1f1f;
+      border-bottom: 1px solid #333;
+    }
+    nav a {
+      color: #0ff;
+      padding: 12px 24px;
+      text-decoration: none;
+      transition: background 0.3s;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background-color: #333;
+    }
+    section {
+      padding: 30px;
+      display: none;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section.active {
+      display: block;
+    }
+    img.dashboard {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #0ff;
+    }
+    .download {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #0ff;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .download:hover {
+      background-color: #00d2d2;
+    }
+    .readme-box {
+      background-color: #1e1e1e;
+      border-left: 4px solid #0ff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📊 Amazon Sales Dashboard</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('overview')">Overview</a>
+    <a href="#" onclick="showSection('download')">Download</a>
+    <a href="#" onclick="showSection('readme')">README</a>
+  </nav>
+
+  <section id="overview" class="active">
+    <h2>Dashboard Preview</h2>
+    <img class="dashboard" src="assets/dashboard.png" alt="Amazon Sales Dashboard Screenshot" />
+  </section>
+
+  <section id="download">
+    <h2>Download Power BI File</h2>
+    <p>You can download the full interactive `.pbix` dashboard file:</p>
+    <a class="download" href="AMAZON.pbix" download>⬇️ Download AMAZON.pbix</a>
+  </section>
+
+  <section id="readme">
+    <h2>📖 Project Documentation</h2>
+    <div class="readme-box">
+      <p>This dashboard includes:</p>
+      <ul>
+        <li>🔹 KPIs: Sales, Profit, Orders, Discounts</li>
+        <li>🔹 Visuals: Trends, Category/Segment Profit, Region Map</li>
+        <li>🔹 Features: Drill-through, Dynamic Titles, Tooltips</li>
+      </ul>
+      <p>👉 For complete details, <a href="README.md" style="color:#0ff;">view the README file</a>.</p>
+    </div>
+  </section>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
